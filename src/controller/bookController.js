@@ -83,7 +83,7 @@ exports.getBookId = async (req, res) => {
 
     if (!mongoose.isValidObjectId(id)) return res.status(400).send({ status: false, message: "id is not valid" })
 
-    let findData = await bookModel.findById({ _id: id, isDeleted: false }).lean().select({ ISBN: 0, __v: 0 })
+    let findData = await bookModel.findOne({ _id: id, isDeleted: false }).lean().select({ ISBN: 0, __v: 0 })
     if (!findData) return res.status(404).send({ status: false, message: "this bookId not exist in our data base" })
     let reviewFind = await reviewModel.find({ bookId: findData._id, isDeleted: false }).select({ isDeleted: 0, __v: 0 })
     findData.reviewsData = reviewFind
