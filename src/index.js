@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose= require('mongoose')
+const multer = require("multer")
 const route = require('./route/route')
 const app = express()
 
@@ -10,7 +11,7 @@ const cors = require('cors')
 
 
 
-
+app.use(multer().any())
 app.use(cors())
 
 

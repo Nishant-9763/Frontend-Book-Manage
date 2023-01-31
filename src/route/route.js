@@ -5,7 +5,7 @@ const userCtrl = require('../controller/userController');
 const bookCtrl = require('../controller/bookController');
 const reviewCtrl = require('../controller/reviewController')
 
-
+route.post("/creatLink",bookCtrl.createBookCover)
 
 route.post('/register', userCtrl.createUser);
 route.post('/login', userCtrl.loginUser);
