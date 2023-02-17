@@ -10,11 +10,11 @@ route.post("/creatLink",bookCtrl.createBookCover)
 route.post('/register', userCtrl.createUser);
 route.post('/login', userCtrl.loginUser);
 //  BOOK api
-route.post('/books',authentication,authorization,bookCtrl.bookCreate)
-route.get('/books',authentication,bookCtrl.getBook)
-route.get('/books/:bookId',authentication,bookCtrl.getBookId)
-route.put('/books/:bookId',authentication,authorization,bookCtrl.updateBook)
-route.delete('/books/:bookId',authentication,authorization,bookCtrl.bookDeleted)
+route.post('/books',bookCtrl.bookCreate)
+route.get('/books',bookCtrl.getBook)
+route.get('/books/:bookId',bookCtrl.getBookId)
+route.put('/books/:bookId',bookCtrl.updateBook)
+route.delete('/books/:bookId',bookCtrl.bookDeleted)
 
 // review api
 
